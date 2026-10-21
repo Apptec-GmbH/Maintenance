@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AppTec 360 EMM - Maintenance in Progress</title>
-<meta name="description" content="The AppTec 360 EMM Console is temporarily unavailable while scheduled maintenance is carried out.">
+<title>AppTec360 UEM - Sicherheitswartung / Security Maintenance</title>
+<meta name="description" content="Außerplanmäßige Sicherheitswartung der AppTec360-Managementkonsole bis voraussichtlich 20:00 Uhr (MESZ). Unscheduled security maintenance of the AppTec360 management console until approximately 20:00 CEST.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +15,38 @@
 <body>
 <main>
     <div class="card">
+        <button type="button" id="langSwitch" class="langSwitch" hidden></button>
         <div class="logo">
             <img src="assets/logo.svg" alt="AppTec360" width="320" height="58">
         </div>
 
-        <div class="maintenanceMessage">
+        <div class="maintenanceMessage" lang="de">
             <div class="maintenanceHeader">
                 <img id="warningImage" src="assets/warning.svg" alt="">
-                <h1 class="maintenanceTitle">Maintenance in Progress</h1>
+                <h1 class="maintenanceTitle">Außerplanmäßige Sicherheitswartung</h1>
             </div>
-            <p>The AppTec 360 EMM Console is currently unavailable while we carry out scheduled maintenance. We expect to be back online on 16.09.2026 at 20:00 CEST. Enrolled devices stay protected and reconnect automatically.</p>
+            <p>Sehr geehrte Kundinnen und Kunden,</p>
+            <p>zur Gewährleistung der Sicherheit und Stabilität unserer Plattform führen wir heute, am 21. Oktober 2026, außerplanmäßige Sicherheitswartungsarbeiten durch.</p>
+            <p>Die Wartungsarbeiten dauern voraussichtlich bis 20:00 Uhr (MESZ).</p>
+            <p>Während dieser Zeit ist die Anmeldung an der AppTec360-Managementkonsole vorübergehend nicht möglich. Neue Einstellungen und Konfigurationsänderungen können daher nicht vorgenommen werden.</p>
+            <p>Bereits verwaltete Geräte bleiben funktionsfähig. Bestehende Konfigurationen bleiben erhalten. Die Gerätekommunikation läuft weiterhin, sofern die technischen Prüfungen dies bestätigen.</p>
+            <p>Wir danken Ihnen für Ihr Verständnis.</p>
+            <p>Ihr AppTec360-Team</p>
+        </div>
+
+        <div class="maintenanceMessage translation" lang="en">
+            <div class="maintenanceHeader">
+                <img src="assets/warning.svg" alt="" class="warningImage">
+                <h2 class="maintenanceTitle">Unscheduled Security Maintenance</h2>
+            </div>
+            <p>Dear Customers,</p>
+            <p>To ensure the security and stability of our platform, we are carrying out unscheduled security maintenance today, 21 October 2026.</p>
+            <p>The maintenance is expected to last until 20:00 CEST (UTC+2).</p>
             <p id="localTime" class="localTime"></p>
+            <p>During this time, signing in to the AppTec360 management console is temporarily not possible. New settings and configuration changes therefore cannot be made.</p>
+            <p>Devices that are already managed remain functional. Existing configurations are retained. Device communication continues to operate, provided our technical checks confirm this.</p>
+            <p>Thank you for your understanding.</p>
+            <p>Your AppTec360 Team</p>
         </div>
     </div>
 </main>
