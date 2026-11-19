@@ -41,3 +41,41 @@
     var endStr = end.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
     target.textContent = 'That is ' + endStr + ' in your local time.';
 })();
+
+(function () {
+    // Once maintenance is over and DNS points back to the real servers,
+    // a reload lands the visitor on the management console.
+    var interval = 2 * 60 * 1000;
+    var notices = document.querySelectorAll('.reloadNotice');
+    var deadline = Date.now() + interval;
+
+    function format(ms) {
+        var s = Math.max(0, Math.ceil(ms / 1000));
+        var m = Math.floor(s / 60);
+        s = s % 60;
+        return m + ':' + (s < 10 ? '0' : '') + s;
+    }
+
+    function tick() {
+        var left = deadline - Date.now();
+        if (left <= 0) {
+            // reloading while offline would leave the browser's error page behind, which never reloads again
+            if (navigator.onLine === false) {
+                deadline = Date.now() + 10 * 1000;
+            } else {
+                location.reload();
+                return;
+            }
+        }
+        for (var i = 0; i < notices.length; i++) {
+            var de = notices[i].closest('[lang]').lang === 'de';
+            notices[i].textContent = de
+                ? 'Diese Seite wird in ' + format(left) + ' automatisch neu geladen.'
+                : 'This page will reload automatically in ' + format(left) + '.';
+            notices[i].hidden = false;
+        }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+})();

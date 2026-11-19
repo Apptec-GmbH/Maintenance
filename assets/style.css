@@ -126,6 +126,13 @@ main {
     color: var(--grey-light);
 }
 
+.maintenanceMessage .reloadNotice {
+    margin-top: 28px;
+    font-size: 13px;
+    color: var(--grey-light);
+    font-variant-numeric: tabular-nums;
+}
+
 .maintenanceMessage .localTime {
     margin-top: 10px;
     font-size: 14px;
