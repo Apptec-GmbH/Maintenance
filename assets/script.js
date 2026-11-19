@@ -16,8 +16,8 @@
         en.hidden = lang !== 'en';
         document.documentElement.lang = lang;
         document.title = lang === 'de'
-            ? 'AppTec360 UEM - Sicherheitswartung'
-            : 'AppTec360 UEM - Security Maintenance';
+            ? 'AppTec360 UEM - Wartung'
+            : 'AppTec360 UEM - Maintenance';
         button.textContent = lang === 'de' ? 'English' : 'Deutsch';
         button.lang = lang === 'de' ? 'en' : 'de';
     }
@@ -32,7 +32,7 @@
 })();
 
 (function () {
-    var end = new Date('2026-10-21T20:00:00+02:00');
+    var end = new Date('2026-11-19T15:30:00+01:00');
     var target = document.getElementById('localTime');
     if (!target) return;
 
